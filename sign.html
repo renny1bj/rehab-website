@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>ARC</title>
+    <!-- <meta name="description" content="Login Page Example" />
+    <meta name="author" content="Ali Abbasi" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" href="main.css" /> -->
+    <link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <style>
+      ul, li, h2, h4, h5, h6, .logo {
+        font-family: "Lato","Verdana",sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+      }
+
+      .inner {
+        width: 1200px;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      header {
+        /* position: fixed; */
+        width: 100%;
+        padding-top: 20px;
+        background: rgba(54, 25, 25, .4);
+        transition: 0.7s all;
+        z-index: 100;
+      }
+
+      header.alt-header {
+        background: #fff;
+      }
+
+      .alt-header a {
+        color: #000;
+      }
+
+      body.header-fixed header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding-top: 0;
+        width: 100%;
+        z-index: 2;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      nav {
+        overflow: hidden;
+      }
+
+      nav ul {
+        float: right;
+      }
+
+      nav li {
+        display: inline;
+        float: left;
+      }
+
+      nav a {
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+        padding: 25px;
+        transition: 0.3s all;
+      }
+
+      nav a:hover {
+        background: red;
+      }
+
+      .logo {
+        float: left;
+        color: #fff;
+        font-size: 50px;
+        line-height: 50px;
+        transition: 0.7s all;
+      }
+
+      .alt-header .logo {
+        color: #000;
+      }
+
+      body.header-fixed .logo {
+        font-size: 30px;
+      }
+
+      .alternate {
+        background: #000;
+        color: #fff;
+      }
+
+      section .inner {
+        padding-top: 200px;
+      }
+
+      body {
+      background-image: linear-gradient(to bottom left, #52733B, #84A45A, #818A6F, #E4EBF2, #ffffff);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Secular One', sans-serif;
+    }
+
+    f{
+      font-family: 'Merienda';
+      color:  #056608;
+      margin: 0;
+      font-size: 50px;
+      font-weight: 400;
+      opacity: 1;
+    }
+    img {
+      opacity: 0.5;
+    }
+    h1{
+
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #0d28c0;
+    }
+
+    a:hover{
+      color: #071561;
+    }
+
+    .main-container {
+      display: flex;
+      width: 70%;
+      height: 700px;
+      min-height: 80vh;
+      background-color: transparent;
+      margin: 10vh auto;
+      border-radius: 12px;
+      box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    .left-container {
+      width: 40%;
+      height: 100%;
+      background-color: transparent ;
+      border-radius: 10px 0 0 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .right-container {
+      width: 60%;
+      height: 100%;
+      background-image: url('https://c1.wallpaperflare.com/preview/821/675/822/hand-teamwork-cooperation-partnership.jpg');
+      background-position: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      background-size: cover;
+      /* justify-content: space-around; */
+      border-radius: 0 10px 10px 0;
+    }
+    .signup-form {
+      width: 70%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .signup-form input {
+      border-radius: 200px;
+      padding: 5px 15px;
+      height: 2rem;
+      font-size: 1rem;
+      background-color: #ddd;
+      color: #444;
+      border: none;
+    }
+
+    .signup-form input {
+      display: block;
+      margin-top: 1rem;
+      width: 100%;
+      font-family: inherit;
+    }
+
+    .signup-form input.first-name,
+    .signup-form input.last-name {
+      width: 48%;
+    }
+
+    .signup-form input:focus {
+      outline: none;
+    }
+
+    .signup-form input[type='checkbox']{
+      margin: 1rem 0.5rem 1rem 0;
+    }
+
+    .signup-form input[type='checkbox'],
+    .signup-form input[type='checkbox'] + label {
+      display: inline-block;
+      width: auto;
+    }
+
+    .signup-form .check{
+      display: flex;
+      align-items: center;
+    }
+
+    .signup-form button {
+      color: white;
+      background-color: #bf360c;
+      border: none;
+      padding: 1rem;
+      font-family: inherit;
+      border-radius: 10px;
+      font-size: 1.5rem;
+      display: block;
+      width: 50%;
+      margin: auto;
+      margin-top: 2rem;
+    }
+
+    .signup-form button:hover{
+      background-color: #83260a;
+      cursor: pointer;
+    }
+
+    button.disabled {
+      color: grey;
+      background-color: darkgrey;
+    }
+
+    button.disabled:hover {
+      color: grey;
+      background-color: darkgrey;
+      cursor: unset;
+    }
+    .button1 {
+      display: inline-block;
+      border-radius: 4px;
+      background-color:green;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 28px;
+      padding: 20px;
+      width: 200px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .button1 span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .button1 span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .button1:hover span {
+      padding-right: 25px;
+    }
+
+    .button1:hover span:after {
+      opacity: 1;
+      right: 0;
+    .signin1-link {
+      color: green;
+    }
+
+    .signin1-link:hover {
+      color: #333;
+      cursor: pointer;
+    }
+
+    @media (max-width:1240px){
+      .left-container{
+        width: 50%;
+      }
+      .right-container{
+        width: 50%;
+      }
+    }
+
+    @media (max-width:970px){
+      .signup-form button{
+        font-size: 1rem;
+      }
+      .signup-form input[type="checkbox"] + label{
+        font-size: 0.8rem;
+      }
+      .signin-link{
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width:950px) {
+      .left-container{
+        width: 100%;
+        border-radius: 10px;
+      }
+      .main-container h1{
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+      }
+      .signup-form input{
+        margin-top: 0.5rem;
+      }
+      .right-container{
+        display: none;
+      }
+    }
+
+    @media (max-width:550px){
+      .main-container{
+        width: 90%;
+        left: 5%;
+      }
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- <header id="topnav">
+      <div class="inner">
+        <div class="logo"> Africa Rehabilitation center
+</div>
+        <nav role='navigation'>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Solution</a></li>
+            <li><a href="#">Motivation</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header> -->
+
+    <div class="main-container">
+      <div class="left-container">
+        <h1>Sign up now</h1>
+        <div style="width: 100%;">
+          <form action="index.html" class="signup-form">
+            <input type="text" id="first-name" placeholder="First Name">
+            <input type="text" id="last-name" placeholder="Last Name">
+            <input type="email" id="email" placeholder="E-mail">
+            <input type="password" id="password" placeholder="Password">
+            <div class="check">
+              <input type="checkbox" onclick="checkTerms()" id="agree-terms">
+              <label for="agree-terms">Agree to
+                <a href="#">Terms &amp; Conditions</a>
+              </label>
+            </div>
+            <button type="submit" id="submit">Sign Up</button>
+          </form>
+        </div>
+        <div class="signin-link-container">
+          <p class="signin-link">Already have an account? Click here!</p>
+        </div>
+      </div>
+      <div class="right-container">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <f>WE ARE STRONGER </f>
+        <f>TOGETHER </f>
+        <br><br>
+          <button class="button1" style="vertical-align:middle" href="index.html"><span>Learn more</span></button>
+      </div>
+
+    </div>
+    <script>
+      function checkTerms() {
+        var termsCheck = document.getElementById('agree-terms');
+        var btn = document.getElementById('submit');
+        if (termsCheck.checked == true){
+          btn.classList.remove("disabled");
+          btn.disabled = false;
+        }else{
+          btn.classList.add("disabled");
+          btn.disabled = true;
+        }
+      }
+      }())
+
+      ;
+    </script>
+  </body>
+</html>
